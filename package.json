@@ -1,0 +1,65 @@
+{
+  "name": "pipenv-manager",
+  "displayName": "Pipenv Manager",
+  "description": "Manage Python package whith pipenv. ",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:pipenv-manager"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "pipenv-manager",
+          "title": "Pipenv Manager",
+          "icon": "resources/pipenv.svg"
+        }
+      ]
+    },
+    "views": {
+      "pipenv-manager-explorer": [
+        {
+          "id": "pipenv-manager-installed",
+          "name": "Installed"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "pipenv-manager.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "extensionDependencies": [
+    "ms-python.python"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.84.1",
+    "@vscode/python-extension": "1.0.5",
+    "@types/mocha": "^10.0.4",
+    "@types/node": "20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "glob": "^10.3.10",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2",
+    "@vscode/test-electron": "^2.3.6"
+  }
+}
