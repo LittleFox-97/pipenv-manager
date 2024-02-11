@@ -1,36 +1,17 @@
 {
   "name": "pipenv-manager",
-  "displayName": "Pipenv Manager",
-  "description": "Manage Python package whith pipenv. ",
+  "displayName": "Pipenv manager",
+  "description": "Manager for python package",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": "^1.86.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onView:pipenv-manager"
-  ],
+  "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "pipenv-manager",
-          "title": "Pipenv Manager",
-          "icon": "resources/pipenv.svg"
-        }
-      ]
-    },
-    "views": {
-      "pipenv-manager-explorer": [
-        {
-          "id": "pipenv-manager-installed",
-          "name": "Installed"
-        }
-      ]
-    },
     "commands": [
       {
         "command": "pipenv-manager.helloWorld",
@@ -38,28 +19,23 @@
       }
     ]
   },
-  "extensionDependencies": [
-    "ms-python.python"
-  ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.84.1",
-    "@vscode/python-extension": "1.0.5",
-    "@types/mocha": "^10.0.4",
-    "@types/node": "20.9.0",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "eslint": "^8.53.0",
-    "glob": "^10.3.10",
-    "mocha": "^10.2.0",
-    "typescript": "^5.2.2",
-    "@vscode/test-electron": "^2.3.6"
+    "@types/vscode": "^1.86.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.9"
   }
 }
