@@ -5,3 +5,4 @@ node_modules
 *.vsix
 .vscode
 TODO
+package-lock.json
